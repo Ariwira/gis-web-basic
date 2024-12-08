@@ -105,12 +105,12 @@
             const marker = L.marker([lat, lng]).addTo(leafletMap);
             marker.bindPopup(`<b>${title}</b><br>${description}`);
             marker.on('click', function() {
-                leafletMap.setView([lat, lng], 15); // Set zoom level to 15 and center the map on the marker
+                leafletMap.setView([lat, lng], 15); 
             });
 
             // Event listener untuk popup close
             marker.on('popupclose', function() {
-                leafletMap.setZoom(13); // Zoom out when popup is closed
+                leafletMap.setZoom(13); 
             });
 
             // Google Maps
@@ -136,7 +136,7 @@
             });
             // Event listener untuk InfoWindow close
             google.maps.event.addListener(infoWindow, 'closeclick', function() {
-                googleMap.setZoom(13); // Zoom out when InfoWindow is closed
+                googleMap.setZoom(13); 
             });
         }
 
