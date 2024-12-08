@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasar Peta Interaktif</title>
+    <title>Peta Interaktif dengan Laravel (TUGAS 1)</title>
 
     <!-- Leaflet.js CDN -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -24,11 +24,24 @@
             padding: 10px;
         }
 
-        #leaflet-map,
-        #google-map {
+        .map-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .map-wrapper {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .map {
             height: 400px;
-            margin: 20px auto;
-            max-width: 90%;
+            width: 100%;
         }
 
         .nav-button {
@@ -49,6 +62,16 @@
         .nav-button:hover {
             background-color: #0056b3;
         }
+
+        @media (max-width: 768px) {
+            .map-container {
+                flex-direction: column;
+            }
+
+            .map-wrapper {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -56,8 +79,18 @@
     <h1>Peta Interaktif dengan Laravel (TUGAS 1)</h1>
 
     <a href="/" class="nav-button">Kembali ke Halaman Awal</a>
-    <div id="leaflet-map"></div>
-    <div id="google-map"></div>
+
+    <div class="map-container">
+        <div class="map-wrapper">
+            <h2>Leaflet Map</h2>
+            <div id="leaflet-map" class="map"></div>
+        </div>
+        <div class="map-wrapper">
+            <h2>Google Maps</h2>
+            <div id="google-map" class="map"></div>
+        </div>
+    </div>
+
     <script>
         // Inisialisasi peta Leaflet
         const leafletMap = L.map('leaflet-map').setView([-8.7984047, 115.1698715, ], 13);
@@ -88,6 +121,7 @@
         };
 
         L.control.layers(baseLayers).addTo(leafletMap);
+
         // Inisialisasi peta Google Maps
         const googleMap = new google.maps.Map(document.getElementById('google-map'), {
             center: {
