@@ -4,89 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Sistem Informasi Geografis</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Sistem Informasi Geografis - Tugas Praktikum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        html {
+        :root {
+            --primary-color: #2193b0;
+            --secondary-color: #6dd5ed;
+            --accent-color: #f85032;
+        }
+
+        html,
+        body {
             height: 100%;
             margin: 0;
-            padding: 0;
+            overflow-x: hidden;
         }
 
         body {
-
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
-            background-size: cover;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             color: #fff;
             font-family: 'Arial', sans-serif;
-            ;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
-            margin-top: 5%;
+            display: flex;
+            justify-content: center
         }
 
-        h1 {
-            font-size: 3rem;
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 15px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            color: #fff;
         }
 
-        .btn {
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-custom {
             padding: 15px 30px;
             font-size: 1.2rem;
             border-radius: 50px;
             transition: all 0.3s ease;
+            margin: 0 10px;
+            display: inline-block;
         }
 
-        .btn-primary {
-            background-color: #00c6ff;
+        .btn-primary-custom {
+            background-color: var(--primary-color);
             border: none;
+            color: #fff;
         }
 
-        .btn-primary:hover {
+        .btn-primary-custom:hover {
             background-color: #007acc;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .btn-secondary {
-            background-color: #f85032;
+        .btn-secondary-custom {
+            background-color: var(--accent-color);
             border: none;
+            color: #fff;
         }
 
-        .btn-secondary:hover {
+        .btn-secondary-custom:hover {
             background-color: #c41c00;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .mt-4 {
-
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .btn-custom {
+                margin: 10px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container text-center">
-        <h1>Tugas Sistem Informasi Geografis</h1>
-        <div class="mt-5 d-flex justify-content-center  ">
-            <a href="/map" class="mx-2 btn btn-primary shadow-lg">LATIHAN</a>
-            <a href="/tugas1" class="mx-2 btn btn-secondary shadow-lg">TUGAS 1</a>
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Sistem Informasi Geografis</h1>
+                <p class="hero-subtitle">Universitas Udayana</p>
+                <div class="mt-4">
+                    <a href="/map" class="btn btn-custom btn-primary-custom shadow-lg">LATIHAN</a>
+                    <a href="/tugas1" class="btn btn-custom btn-secondary-custom shadow-lg">TUGAS 1</a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
