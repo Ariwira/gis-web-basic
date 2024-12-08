@@ -29,6 +29,7 @@
             height: 400px;
             margin: 20px auto;
             max-width: 90%;
+             border-radius: 16px;
         }
 
         .nav-button {
