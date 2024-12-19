@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dasar Peta Interaktif</title>
 
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
     <!-- Leaflet.js CDN -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -53,13 +61,50 @@
     </style>
 </head>
 
-<body>
-    <h1>Peta Interaktif dengan Laravel (LATIHAN)</h1>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="#" class="brand-link">
+                <span class="brand-text font-weight-light">Peta Interaktif</span>
+            </a>
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+                        <li class="nav-item">
+                            <a href="/map" class="nav-link active ">
+                                <i class="nav-icon fas fa-map"></i>
+                                <p>Latihan1</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/interactive" class="nav-link">
+                                <i class="nav-icon fas fa-map"></i>
+                                <p>latihan2</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/tugas1" class="nav-link">
+                                <i class="nav-icon fas fa-map"></i>
+                                <p>Tugas1</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/tugas2" class="nav-link">
+                                <i class="nav-icon fas fa-map"></i>
+                                <p>Tugas2</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="content-wrapper">
+            <h1>Peta Interaktif dengan Laravel (LATIHAN)</h1>
 
-    <a href="/" class="nav-button">Kembali ke Halaman Awal</a>
-
-    <div id="leaflet-map"></div>
-    <div id="google-map"></div>
+            <div id="leaflet-map"></div>
+            <div id="google-map"></div>
+        </div>
+    </div>
     <script>
         // Inisialisasi peta Leaflet
         const leafletMap = L.map('leaflet-map').setView([-8.6509, 115.2194], 13);
@@ -105,12 +150,12 @@
             const marker = L.marker([lat, lng]).addTo(leafletMap);
             marker.bindPopup(`<b>${title}</b><br>${description}`);
             marker.on('click', function() {
-                leafletMap.setView([lat, lng], 15); 
+                leafletMap.setView([lat, lng], 15);
             });
 
             // Event listener untuk popup close
             marker.on('popupclose', function() {
-                leafletMap.setZoom(13); 
+                leafletMap.setZoom(13);
             });
 
             // Google Maps
@@ -136,7 +181,7 @@
             });
             // Event listener untuk InfoWindow close
             google.maps.event.addListener(infoWindow, 'closeclick', function() {
-                googleMap.setZoom(13); 
+                googleMap.setZoom(13);
             });
         }
 
@@ -146,6 +191,41 @@
         addMarker(-8.663372743705459, 115.22739868277444, "Taman Kopi", "Denpasar, Bali");
         addMarker(-8.7984047, 115.1698715, "Rektorat Universitas Udayana", "Badung, Bali");
     </script>
+    </script>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
 </body>
 
 </html>
