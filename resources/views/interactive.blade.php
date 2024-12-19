@@ -75,7 +75,7 @@
                         <li class="nav-item">
                             <a href="/interactive" class="nav-link active">
                                 <i class="nav-icon fas fa-map"></i>
-                                <p>latihan2</p>
+                                <p>Latihan2</p>
                             </a>
                         </li>
                         <li class="nav-item">

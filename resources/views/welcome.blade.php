@@ -115,6 +115,8 @@
                 <div class="mt-4">
                     <a href="/map" class="btn btn-custom btn-primary-custom shadow-lg">LATIHAN</a>
                     <a href="/tugas1" class="btn btn-custom btn-secondary-custom shadow-lg">TUGAS 1</a>
+                    <a href="/interactive" class="btn btn-custom btn-primary-custom shadow-lg">LATIHAN 2</a>
+                    <a href="/tugas2" class="btn btn-custom btn-secondary-custom shadow-lg">TUGAS 2</a>
                 </div>
             </div>
         </div>

@@ -9,6 +9,10 @@
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
+        },
+        {
+            "src": "/(.\\.css|.\\.js|.\\.png|.\\.jpg|.\\.jpeg|.\\.gif|.\\.svg|.\\.ico|.\\.woff|.\\.woff2|.\\.ttf|.\\.eot)",
+            "dest": "/public/$1"
         }
     ],
     "env": {
@@ -25,5 +29,6 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"
     },
+
     "outputDirectory": "public"
 }
