@@ -7,6 +7,11 @@
     },
     "routes": [
         {
+            "src": "http://(.*)",
+            "headers": { "Location": "https://$1" },
+            "status": 301
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         },
@@ -15,10 +20,11 @@
             "dest": "/public/$1"
         }
     ],
+
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://gis-web-basic.vercel.app/",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://gis-web-basic.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
