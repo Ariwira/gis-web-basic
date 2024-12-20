@@ -40,6 +40,13 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4lKVb0eLSNyhEO-C_8JoHhAvba6aZc3U"></script>
 
     <style>
+        .wrapper,
+        body,
+        html {
+            height: 100%;
+        }
+
+
         .form-container {
             padding: 20px
         }
